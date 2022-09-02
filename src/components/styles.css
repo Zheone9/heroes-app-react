@@ -1,0 +1,21 @@
+.bsubir{
+    font-size: 3rem;
+    position: fixed;
+    right: 0;
+    bottom: 7px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.div-center {
+
+    display: flex;
+    align-items: center; /* Vertical */
+    justify-content: center; /* Horizontal */
+    width: 100%;
+    height: 100%;
+  }
+
+  #root {
+    height: 100vh;
+  }
