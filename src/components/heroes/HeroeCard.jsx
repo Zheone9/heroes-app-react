@@ -17,7 +17,7 @@ const HeroeCard = ({
       <div className="card animate__animated animate__fadeIn">
         <LazyImage
           className="card-img"
-          placeholder="https://64.media.tumblr.com/2b911a5aa476acb79bc56fd4b6ece7bf/ecde8d103f41cb37-42/s400x600/dc1f77f98960f4e6297415a86bbc91a02688bca4.gifv"
+          placeholder="https://img.freepik.com/free-vector/blurred-purple-background_1107-140.jpg"
           src={`./assets/heroes/${id}.jpg`}
         >
           {(src, loading, isVisible) => <img src={src} />}
