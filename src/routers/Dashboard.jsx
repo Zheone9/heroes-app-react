@@ -5,25 +5,13 @@ import { useLoading } from "../hooks/useLoading";
 import LoadingScreen from "../components/LoadingScreen";
 
 const Dashboard = () => {
-  const { setImageLoaded, imagesLoaded } = useLoading({
-    time: 0,
-    hasImages: true,
-  });
-
-  useEffect(() => {
-    console.log(imagesLoaded);
-  }, [imagesLoaded]);
-
   return (
     <>
-      <LoadingScreen display={Number(imagesLoaded)} />
-      <div style={{ opacity: Number(imagesLoaded) }}>
-        <NavBar />
-        {/* outlet es donde se muestra las rutas hijas */}
+      <NavBar />
+      {/* The outlet is where the child routes are shown */}
 
-        <div className="container">
-          <Outlet context={setImageLoaded} />
-        </div>
+      <div className="container">
+        <Outlet />
       </div>
     </>
   );

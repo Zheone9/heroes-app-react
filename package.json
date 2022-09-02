@@ -7,6 +7,7 @@
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-progressive-image": "^1.5.5",
     "react-loader-spinner": "^5.3.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",

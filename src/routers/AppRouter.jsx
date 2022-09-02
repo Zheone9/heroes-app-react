@@ -12,6 +12,7 @@ import LoadingScreen from "../components/LoadingScreen.jsx";
 
 import MarvelScreen from "../components/marvel/MarvelScreen.jsx";
 import SearchScreen from "../components/search/SearchScreen.jsx";
+import { useLoading } from "../hooks/useLoading.js";
 
 import Dashboard from "./Dashboard.jsx";
 
@@ -20,17 +21,21 @@ import PublicRoute from "./PublicRoute.jsx";
 
 const AppRouter = () => {
   const { user } = useContext(AuthContext);
-
+  const isLoading = useLoading();
   return (
     <Router>
       <Routes>
         <Route
           path="/"
           element={
-            <PrivateRoute
-              isAuthenticated={user.logged}
-              element={<Dashboard />}
-            />
+            isLoading ? (
+              <LoadingScreen />
+            ) : (
+              <PrivateRoute
+                isAuthenticated={user.logged}
+                element={<Dashboard />}
+              />
+            )
           }
         >
           {/* rutas hijas */}

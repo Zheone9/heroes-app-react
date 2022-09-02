@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyImage from "react-lazy-progressive-image";
 const HeroeCard = ({
   id,
   superhero,
@@ -11,12 +12,14 @@ const HeroeCard = ({
   return (
     <div className="col">
       <div className="card animate__animated animate__fadeIn">
-        <img
-          onLoad={setImageLoaded}
-          src={`./assets/heroes/${id}.jpg`}
+        <LazyImage
           className="card-img"
-          alt={superhero}
-        />
+          placeholder="https://img.freepik.com/premium-vector/blank-light-grey-blurred-background-with-radial-gradient_53562-6788.jpg?w=2000"
+          src={`./assets/heroes/${id}.jpg`}
+        >
+          {(src, loading, isVisible) => <img src={src} />}
+        </LazyImage>
+
         <div className="card-body">
           <h5 className="card-title">
             <b> {superhero}</b>
