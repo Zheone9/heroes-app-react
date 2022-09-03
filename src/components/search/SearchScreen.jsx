@@ -64,12 +64,12 @@ const SearchScreen = () => {
           <h4>Results</h4>
           <hr />
           <div className="row row-cols-2 row-cols-md-4 g-4">
-            {heroesFiltered.length === 0 && (
+            {heroesFiltered.length === 0 && location.search.length > 0 && (
               <div
                 className="alert alert-danger w-100 text-center"
                 role="alert"
               >
-                There is no a hero by the name of: {searchTerm}
+                There is no a hero by the name of: {q}
               </div>
             )}
 
